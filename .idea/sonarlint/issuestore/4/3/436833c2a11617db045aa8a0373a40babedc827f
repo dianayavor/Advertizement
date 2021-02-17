@@ -1,7 +1,11 @@
 
-G
-java:S1068"*Remove this unused "logger" private field.(Íßâï8ƒ¾Åÿú.
+b
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ëÄò¿8Øš½„û.
 T
-java:S11357"2Complete the task associated to this TODO comment.(©…€¸ûÿÿÿÿ8ş†áúú.
+java:S1135="2Complete the task associated to this TODO comment.(©…€¸ûÿÿÿÿ8ş†áúú.
+G
+java:S1068"*Remove this unused "logger" private field.(ëÄò¿8…ÃÍ„û.
 w
-java:S1989V"ZHandle the following exception that could be thrown by "parseLong": NumberFormatException.(ÄË†è8ıĞºıú.
+java:S1989\"ZHandle the following exception that could be thrown by "parseLong": NumberFormatException.(ÄË†è8ıĞºıú.
+z
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(•Ô¿£ùÿÿÿÿ8Üûßˆû.

@@ -20,7 +20,7 @@ public class TableAdverts {
     public static boolean createTableAdverts() {
         StringBuilder queryBuilder = new StringBuilder();
         queryBuilder.append("create table if not exists ")
-                .append(TABLE_NAME_ADVERTS).append("( ")
+                .append(TABLE_NAME_ADVERTS).append(" ( ")
                 .append(TABLE_FIELD_ID).append(" serial primary key, ")
                 .append(TABLE_FIELD_TITLE).append(" text, ")
                 .append(TABLE_FIELD_DESCRIPTION).append(" text, ")

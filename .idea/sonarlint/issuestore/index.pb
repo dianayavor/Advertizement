@@ -75,3 +75,5 @@ V
 &src/main/java/servlet/ServletUtil.java,2\1\21cd2d29d531629efe625d928a448414504ed423
 `
 0src/main/webapp/WEB-INF/properties/db.properties,1\4\146690855ef95e16159caca4fbaaac3b5cf1ff1e
+W
+'src/main/webapp/resources/db.properties,1\3\13b620adfd336fd6fd0151a6c4b8d5b8d0113ef7

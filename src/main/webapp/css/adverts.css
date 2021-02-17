@@ -1,8 +1,3 @@
-.title {
-    text-align: center;
-    margin: 10px;
-}
-
 .header, .dateOfEnd {
     text-align: end;
     margin-right: 10px;
@@ -24,4 +19,42 @@
     width: inherit;
     border: 1px black;
     margin: 5px;
+}
+
+.advert-list {
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 30px;
+}
+
+.card-title {
+    padding: 7px 8px 7px 12px;
+    background-color: #e0e0e0;
+    color: black;
+    display: inline-flex;
+    border-radius: 16px;
+    align-items: end;
+    font-size: 12px;
+    border-bottom: groove;
+    border-right: groove;
+    width: fit-content;
+    float: right;
+    margin: 10px;
+    align-content: end;
+}
+.card-text {
+    align-content: end;
+}
+
+.card {
+    border-bottom: groove;
+    border-right: groove;
+}
+
+body {
+    background: #ededed;
+}
+
+.container-header {
+    margin-left: 100px;
 }

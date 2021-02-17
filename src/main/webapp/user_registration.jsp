@@ -13,50 +13,52 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"
             integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG"
             crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/user.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/user.css">
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <title>Sign up</title>
 </head>
 <body>
-<h1 class="label-sign-up">Sign up</h1>
-<div class="registration-container">
-    <div class="container">
-        <form action="registration" method="post">
-            <div class="sign-up-content">
-                <div class="mb-3">
+<div class="registration-container" align="center">
+    <h1 class="label-sign-up">Sign up</h1>
+    <div class="form-registration">
+        <div class="container">
+            <form action="registration" method="post">
+                <div class="form-group">
                     <label for="inputFirstName" class="form-label">Please, enter your first name</label>
                     <input type="text" class="form-control" id="inputFirstName" name="firstname">
                 </div>
-                <div class="mb-3">
+                <div class="form-group">
                     <label for="inputLastName" class="form-label">Please, enter your first name</label>
                     <input type="text" class="form-control" id="inputLastName" name="lastname">
                 </div>
-                <div class="mb-3">
+                <div class="form-group">
                     <label for="inputEmail" class="form-label">Please, enter your email address</label>
                     <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp"
                            name="email" placeholder="name@example.com">
                 </div>
-                <div class="mb-3">
+                <div class="form-group">
                     <label for="inputDOB" class="form-label">Please, choose your date of birthday</label>
                     <input type="date" class="form-control" id="inputDOB"
                            aria-describedby="emailHelp" name="dob">
                 </div>
-                <div class="mb-3">
+                <div class="form-group">
                     <label for="inputPassword" class="form-label">Enter password</label>
                     <input type="password" class="form-control" id="inputPassword" name="password">
                 </div>
-                <div class="mb-3">
+                <div class="form-group">
                     <label for="repeatPassword" class="form-label">Repeat password</label>
                     <input type="password" class="form-control" id="repeatPassword" name="passwordRepeat">
                 </div>
-                <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+                <div class="btn-signup">
+                    <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+                </div>
                 <div>
                     <p class="login-here">Already have an account?<a href="login" class="login-here-link">
                         Log in </a>
                     </p>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 </div>
 </body>

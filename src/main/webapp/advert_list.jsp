@@ -23,14 +23,41 @@
             padding-right: 200px;
             padding-top: 30px;
         }
+
+        .card-title {
+            padding: 7px 8px 7px 12px;
+            background-color: #e0e0e0;
+            color: black;
+            display: inline-flex;
+            border-radius: 16px;
+            align-items: end;
+            font-size: 12px;
+            border-bottom: groove;
+            border-right: groove;
+            width: fit-content;
+            float: right;
+            margin: 10px;
+        }
+
+        .card {
+            border-bottom: groove;
+            border-right: groove;
+            margin: 5px;
+        }
+
+        body {
+            background: #ededed;
+        }
+        .container-header {
+            margin-left: 100px;
+        }
     </style>
-</head>
-<header>
-        <div class="log-in">
-            <a href="user_sign_in.jsp"> Log in
-                <c:redirect url="http://localhost:8081/Gradle___org_yavdiana___webappadw_1_0_SNAPSHOT_war/login"/></a>
+    <div class="navbar navbar-dark bg-dark">
+        <div class="container-header">
+            <a href="users" class="navbar-brand">Users</a>
         </div>
-</header>
+    </div>
+</head>
 <body>
 
 <div class="advert-list" align="center">

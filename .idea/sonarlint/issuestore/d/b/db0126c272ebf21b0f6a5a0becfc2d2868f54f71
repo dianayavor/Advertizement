@@ -1,7 +1,13 @@
 
-T
-java:S1118":Add a private constructor to hide the implicit public one.(È—	8Ó¹·ú.
-^
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(Í­µøÿÿÿÿ
-5
-java:S2326"E is not used in the class.(È—	8Ó¹·ú.
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(Í­µøÿÿÿÿ
+7
+java:S2326"E is not used in the class.(È—	8Ó¹·ú.
+L
+java:S1068"*Remove this unused "logger" private field.(Í­µøÿÿÿÿ8À€¢…û.
+V
+java:S1118":Add a private constructor to hide the implicit public one.(È—	8Ó¹·ú.
+X	java:S125
+"<This block of commented-out lines of code should be removed.(„Â’Ù8À€¢…û.
+I
+java:S1172	",Remove this unused method parameter "query".(øòÏı8®·¢…û.

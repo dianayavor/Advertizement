@@ -1,5 +1,6 @@
 package servlet;
 
+import model.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import service.UserService;
@@ -39,6 +40,8 @@ public class LoginServlet extends HttpServlet {
         String hashedPassword = hashPassword(password);
 
         if (checkPassword(password, hashedPassword)) {
+            User user = userService.findByLogin(username);
+            //todo send user to adverts page
             RequestDispatcher rd = getServletContext().getRequestDispatcher("/adverts");
             dispatcher(req, resp, rd);
         } else {

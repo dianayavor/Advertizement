@@ -15,24 +15,26 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"
             integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG"
             crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/user.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/user.css">
     <title>Sign in</title>
 </head>
 <body>
-<div class="login-container">
+<div class="login-container" align="center">
+    <h1 class="label-sign-in">Log in</h1>
     <form class="form-login" method="post" action="login">
-        <h1 class="label-sign-in">Log in</h1>
         <div class="container">
             <div class="sign-up-content">
-                <div class="mb-4">
+                <div class="form-group">
                     <label for="inputEmail" class="form-label">Please, enter your email address</label>
-                    <input type="email" id="inputEmail" name="username">
+                    <input type="email" class="form-control" id="inputEmail" name="username">
                 </div>
-                <div class="mb-4">
+                <div class="form-group">
                     <label for="inputPassword" class="form-label">Enter password</label>
-                    <input type="password" id="inputPassword" name="password">
+                    <input type="password" id="inputPassword" class="form-control" name="password">
                 </div>
-                <button type="submit" class="btn btn-primary">Log in</button>
+                <div class="btn-login">
+                    <button type="submit" class="btn btn-primary">Log in</button>
+                </div>
                 <div>
                     <p class="registration-here">Haven't account yet?<a href="registration"
                                                                         class="registration-here-link"> Sign up </a>

@@ -14,10 +14,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"
             integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG"
             crossorigin="anonymous"></script>
-    <link href="<c:url value="css/user.css"/>" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/user.css">
+    <div class="navbar navbar-dark bg-dark">
+        <div class="container-header">
+            <a href="adverts" class="navbar-brand">Adverts</a>
+        </div>
+    </div>
 </head>
 <body>
-<div class="container" align="center">
+<div class="container">
     <table class="table">
         <thead>
         <tr>
@@ -58,7 +63,7 @@
             </c:forEach>
         </tr>
         </tbody>
-    </table>
+    </table class="table">
 </div>
 </body>
 </html>

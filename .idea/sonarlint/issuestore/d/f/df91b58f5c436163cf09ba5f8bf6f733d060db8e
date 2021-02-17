@@ -1,3 +1,9 @@
 
+R
+java:S2696"6Make the enclosing method "static" or remove this set.(§‘ô/8– î‰û.
+z
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(ž¥¦¿ùÿÿÿÿ8Î¤×ˆû.
 L
-java:S1068"*Remove this unused "logger" private field.(‚­Åçûÿÿÿÿ8¿ðÁÿú.
+java:S1068"*Remove this unused "logger" private field.(‚­Åçûÿÿÿÿ8¿ðÁÿú.
+X
+java:S26964"6Make the enclosing method "static" or remove this set.(¹Ã°µÿÿÿÿÿ8– î‰û.
