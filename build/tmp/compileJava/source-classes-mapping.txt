@@ -12,16 +12,16 @@ servlet/filter/LoginFilter.java
  servlet.filter.LoginFilter
 repository/AdvertRepositoryImpl.java
  repository.AdvertRepositoryImpl
-servlet/ServletUtil.java
- servlet.ServletUtil
+repository/UserRepository.java
+ repository.UserRepository
 service/ValidatorService.java
  service.ValidatorService
 config/table/TableAdverts.java
  config.table.TableAdverts
 config/table/TableUsers.java
  config.table.TableUsers
-servlet/AdvertServlet.java
- servlet.AdvertServlet
+repository/AdvertRepository.java
+ repository.AdvertRepository
 model/Advert.java
  model.Advert
 model/User.java
@@ -32,15 +32,15 @@ service/AdvertService.java
  service.AdvertService
 service/UserService.java
  service.UserService
+repository/UserRepositoryImpl.java
+ repository.UserRepositoryImpl
 servlet/RegistrationServlet.java
  servlet.RegistrationServlet
 servlet/UserServlet.java
  servlet.UserServlet
-repository/AdvertRepository.java
- repository.AdvertRepository
-repository/UserRepository.java
- repository.UserRepository
-repository/UserRepositoryImpl.java
- repository.UserRepositoryImpl
+servlet/ServletUtil.java
+ servlet.ServletUtil
+servlet/AdvertServlet.java
+ servlet.AdvertServlet
 servlet/LoginServlet.java
  servlet.LoginServlet

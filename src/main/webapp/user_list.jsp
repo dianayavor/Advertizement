@@ -17,11 +17,7 @@
     <link href="<c:url value="css/user.css"/>" rel="stylesheet">
 </head>
 <body>
-<div class="container">
-    <%--    <div class="log-in">--%>
-    <%--        <a href="user_sign_in.jsp"> Log in--%>
-    <%--            <c:redirect url="http://localhost:8081/Gradle___org_yavdiana___webappadw_1_0_SNAPSHOT_war/login"/></a>--%>
-    <%--    </div>--%>
+<div class="container" align="center">
     <table class="table">
         <thead>
         <tr>

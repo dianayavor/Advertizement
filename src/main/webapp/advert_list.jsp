@@ -18,47 +18,29 @@
     <link rel="stylesheet" href="css/adverts.css" type="text/css">
     <title> List adverts </title>
     <style>
-        .title {
-            text-align: center;
-            margin: 10px;
-        }
-
-        .header, .dateOfEnd {
-            text-align: end;
-            margin-right: 10px;
-            font-style: italic;
-            font-size: 5px;
-        }
-
-        .description {
-            text-align: justify;
-            margin: 10px;
-        }
-
         .advert-list {
-            width: 100%;
-            height: 100%;
-        }
-
-        .container-advert {
-            width: inherit;
+            padding-left: 200px;
+            padding-right: 200px;
+            padding-top: 30px;
         }
     </style>
 </head>
+<header>
+        <div class="log-in">
+            <a href="user_sign_in.jsp"> Log in
+                <c:redirect url="http://localhost:8081/Gradle___org_yavdiana___webappadw_1_0_SNAPSHOT_war/login"/></a>
+        </div>
+</header>
 <body>
-<div class="advert-list">
+
+<div class="advert-list" align="center">
     <div class="card text-dark bg-light mb-3">
         <c:forEach items="${requestScope.adverts}" var="advert">
-            <div class="container-advert">
-                <h1 class="title">${advert.title}</h1>
-                <div class="header">
-                    <p>${advert.heading}</p>
-                </div>
-                <div class="description">
-                    <p>${advert.description}</p>
-                </div>
-                <div class="dateOfEnd">
-<%--                    <fmt:formatDate value="${advert.dateOfCreation}" pattern="dd-MM-yyyy"/>--%>
+            <div class="card">
+                <h5 class="card-header">${advert.title}</h5>
+                <div class="card-body">
+                    <h5 class="card-title" align="right">${advert.heading}</h5>
+                    <p class="card-text" align="justify">${advert.description}</p>
                 </div>
             </div>
         </c:forEach>
