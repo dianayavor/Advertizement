@@ -1,0 +1,27 @@
+.title {
+    text-align: center;
+    margin: 10px;
+}
+
+.header, .dateOfEnd {
+    text-align: end;
+    margin-right: 10px;
+    font-style: italic;
+    font-size: 5px;
+}
+
+.description {
+    text-align: justify;
+    margin: 10px;
+}
+
+.advert-list {
+    width: 85%;
+    height: 100%;
+}
+
+.container-advert {
+    width: inherit;
+    border: 1px black;
+    margin: 5px;
+}
