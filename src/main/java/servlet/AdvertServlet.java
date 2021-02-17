@@ -22,6 +22,15 @@ public class AdvertServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
+        showAdverts(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        showAdverts(req, resp);
+    }
+
+    private void showAdverts(HttpServletRequest req, HttpServletResponse resp) {
         AdvertService service = new AdvertService();
         List<Advert> adverts = service.findAll();
         req.setAttribute("adverts", adverts);

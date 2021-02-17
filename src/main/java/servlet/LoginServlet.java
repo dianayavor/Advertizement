@@ -35,6 +35,16 @@ public class LoginServlet extends HttpServlet {
     private final static TemporalAmount timeOfTokenValidity = Duration.ofMinutes(30L);
 
     @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
+        RequestDispatcher dispatcher = req.getRequestDispatcher("user_sign_in.jsp");
+        try {
+            dispatcher.forward(req, resp);
+        } catch (ServletException | IOException e) {
+            logger.error(e.getMessage());
+        }
+    }
+
+    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
         //resp.setContentType("text/html");
 
@@ -44,7 +54,7 @@ public class LoginServlet extends HttpServlet {
 
         String flag = req.getAttribute("flagValidate").toString();
 
-        if(flag == null) {
+        if (flag == null) {
             String token = createToken(password, role);
 
             req.setAttribute("tokenJKT", token);
@@ -56,15 +66,15 @@ public class LoginServlet extends HttpServlet {
             } catch (ServletException | IOException e) {
                 e.printStackTrace();
             }
-        } else if(flag.equals("Y")) {
+        } else if (flag.equals("Y")) {
             try {
                 String token = req.getAttribute("tokenJKT").toString();
 
                 Jws<Claims> validate = parseToken(token);
 
-                if(validate != null){
+                if (validate != null) {
                     UserService userService = new UserService();
-                    if(userService.findByLoginAndPassword(username, password).getId() != null) {
+                    if (userService.findByLoginAndPassword(username, password).getId() != null) {
                         ServletContext context = getServletContext().getContext("/adverts");
                         RequestDispatcher rd = context.getRequestDispatcher("/adverts");
                         rd.forward(req, resp);

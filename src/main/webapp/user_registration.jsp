@@ -15,53 +15,49 @@
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/user.css" type="text/css">
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    <title>Registration</title>
+    <title>Sign up</title>
 </head>
 <body>
+<h1 class="label-sign-up">Sign up</h1>
 <div class="registration-container">
-    <form div class="form-registration">
-        <div class="main">
-            <h1 class="label-sign-up">Sign up</h1>
-            <div class="container">
-                <div class="sign-up-content">
-                    <form action="user_list.jsp" method="post">
-                        <div class="mb-3">
-                            <label for="inputFirstName" class="form-label">Please, enter your first name</label>
-                            <input type="text" class="form-control" id="inputFirstName" name="firstname">
-                        </div>
-                        <div class="mb-3">
-                            <label for="inputLastName" class="form-label">Please, enter your first name</label>
-                            <input type="text" class="form-control" id="inputLastName" name="lastname">
-                        </div>
-                        <div class="mb-3">
-                            <label for="inputEmail" class="form-label">Please, enter your email address</label>
-                            <input type="email" class="form-control" id="inputEmail"
-                                   aria-describedby="emailHelp" name="email">
-                        </div>
-                        <div class="mb-3">
-                            <label for="inputDOB" class="form-label">Please, choose your date of birthday</label>
-                            <input type="date" class="form-control" id="inputDOB"
-                                   aria-describedby="emailHelp" name="dob">
-                        </div>
-                        <div class="mb-3">
-                            <label for="inputPassword" class="form-label">Enter password</label>
-                            <input type="password" class="form-control" id="inputPassword" name="password">
-                        </div>
-                        <div class="mb-3">
-                            <label for="repeatPassword" class="form-label">Repeat password</label>
-                            <input type="password" class="form-control" id="repeatPassword" name="passwordRepeat">
-                        </div>
-
-                        <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
-                    </form>
-                    <p class="login-here">Already have an account?<a href="user_sign_in.jsp" class="login-here-link">
+    <div class="container">
+        <form action="users" method="post">
+            <div class="sign-up-content">
+                <div class="mb-3">
+                    <label for="inputFirstName" class="form-label">Please, enter your first name</label>
+                    <input type="text" class="form-control" id="inputFirstName" name="firstname">
+                </div>
+                <div class="mb-3">
+                    <label for="inputLastName" class="form-label">Please, enter your first name</label>
+                    <input type="text" class="form-control" id="inputLastName" name="lastname">
+                </div>
+                <div class="mb-3">
+                    <label for="inputEmail" class="form-label">Please, enter your email address</label>
+                    <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp"
+                           name="email" placeholder="name@example.com">
+                </div>
+                <div class="mb-3">
+                    <label for="inputDOB" class="form-label">Please, choose your date of birthday</label>
+                    <input type="date" class="form-control" id="inputDOB"
+                           aria-describedby="emailHelp" name="dob">
+                </div>
+                <div class="mb-3">
+                    <label for="inputPassword" class="form-label">Enter password</label>
+                    <input type="password" class="form-control" id="inputPassword" name="password">
+                </div>
+                <div class="mb-3">
+                    <label for="repeatPassword" class="form-label">Repeat password</label>
+                    <input type="password" class="form-control" id="repeatPassword" name="passwordRepeat">
+                </div>
+                <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+                <div>
+                    <p class="login-here">Already have an account?<a href="login" class="login-here-link">
                         Log in </a>
                     </p>
                 </div>
             </div>
-
-        </div>
-    </form>
+        </form>
+    </div>
 </div>
 </body>
 </html>

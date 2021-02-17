@@ -20,38 +20,25 @@
 </head>
 <body>
 <div class="login-container">
-    <form class="form-login">
-        <div class="main">
-            <h1 class="label-sign-in">Log in</h1>
-            <div class="container">
-                <div class="sign-up-content">
-                    <form>
-                        <div class="mb-4">
-                            <label for="inputEmail" class="form-label">Please, enter your email address</label>
-                            <input type="email" class="form-control is-invalid" id="inputEmail" aria-describedby="emailHelp"
-                                   name="username">
-                            <div id="validationServerUsernameFeedback" class="invalid-feedback">
-                                Please, enter correct login.
-                            </div>
-                        </div>
-                        <div class="mb-4">
-                            <label for="inputPassword" class="form-label">Enter password</label>
-                            <input type="password" class="form-control is-invalid" id="inputPassword" name="password">
-                            <div id="validationServerPassword" class="invalid-feedback">
-                                Please, enter correct password.
-                            </div>
-                        </div>
-                        <form action="user_list.jsp" method="post">
-                            <button type="submit" class="btn btn-primary">Log in</button>
-                        </form>
-                    </form>
-
-                    <p class="registration-here">Haven't account yet?<a href="user_registration.jsp"
-                                                                         class="registration-here-link"> Sign up </a>
+    <form class="form-login" method="post" action="adverts">
+        <h1 class="label-sign-in">Log in</h1>
+        <div class="container">
+            <div class="sign-up-content">
+                <div class="mb-4">
+                    <label for="inputEmail" class="form-label">Please, enter your email address</label>
+                    <input type="email" id="inputEmail" name="username">
+                </div>
+                <div class="mb-4">
+                    <label for="inputPassword" class="form-label">Enter password</label>
+                    <input type="password" id="inputPassword" name="password">
+                </div>
+                <button type="submit" class="btn btn-primary">Log in</button>
+                <div>
+                    <p class="registration-here">Haven't account yet?<a href="registration"
+                                                                        class="registration-here-link"> Sign up </a>
                     </p>
                 </div>
             </div>
-
         </div>
     </form>
 </div>

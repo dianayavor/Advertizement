@@ -18,10 +18,10 @@
 </head>
 <body>
 <div class="container">
-    <div class="log-in">
-        <a href="user_sign_in.jsp"> Log in
-            <c:redirect url="http://localhost:8081/Gradle___org_yavdiana___webappadw_1_0_SNAPSHOT_war/login"/></a>
-    </div>
+    <%--    <div class="log-in">--%>
+    <%--        <a href="user_sign_in.jsp"> Log in--%>
+    <%--            <c:redirect url="http://localhost:8081/Gradle___org_yavdiana___webappadw_1_0_SNAPSHOT_war/login"/></a>--%>
+    <%--    </div>--%>
     <table class="table">
         <thead>
         <tr>
@@ -43,6 +43,22 @@
             <td><c:out value="${user.dateOfBirth}"/></td>
             <td><c:out value="${user.activeAccount}"/></td>
             <td><c:out value="${user.role}"/></td>
+            <td>
+                <div class="btn-group" role="group">
+                    <form action="users" method="post">
+                        <input type="hidden" name="_method" value="post">
+                        <input type="hidden" name="user" value="<c:if test="${user.id != null}">${user}</c:if>"/>
+                        <button type="button" class="btn btn-outline-primary">Edit</button>
+                    </form>
+                    <form action="users" method="post">
+                        <input type="hidden" name="_method" value="delete">
+                        <input type="hidden" name="user" value="<c:if test="${user.id != null}">${user.id}</c:if>"/>
+                        <button type="button" class="btn btn-outline-primary">Delete</button>
+                    </form>
+                        <%--                    <a href="edit?advertId=<c:out value='${user.id}' />"> Edit </a>--%>
+                        <%--                    <a href="delete?advertId=<c:out value='${user.id}' />"> Delete </a>--%>
+                </div>
+            </td>
             </c:forEach>
         </tr>
         </tbody>

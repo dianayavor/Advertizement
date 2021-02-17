@@ -1,21 +1,21 @@
-config/ConfigConnection.java
- config.ConfigConnection
+repository/UserRepository.java
+ repository.UserRepository
 model/Role.java
  model.Role
 model/Heading.java
  model.Heading
 repository/CrudRepository.java
  repository.CrudRepository
-config/table/Util.java
- config.table.Util
-servlet/filter/LoginFilter.java
- servlet.filter.LoginFilter
-servlet/UserServlet.java
- servlet.UserServlet
-repository/AdvertRepository.java
- repository.AdvertRepository
 servlet/AdvertServlet.java
  servlet.AdvertServlet
+servlet/filter/LoginFilter.java
+ servlet.filter.LoginFilter
+repository/AdvertRepositoryImpl.java
+ repository.AdvertRepositoryImpl
+repository/UserRepositoryImpl.java
+ repository.UserRepositoryImpl
+servlet/LoginServlet.java
+ servlet.LoginServlet
 config/table/TableAdverts.java
  config.table.TableAdverts
 config/table/TableUsers.java
@@ -32,13 +32,13 @@ service/UserService.java
  service.UserService
 servlet/RegistrationServlet.java
  servlet.RegistrationServlet
-repository/UserRepository.java
- repository.UserRepository
 service/ValidatorService.java
  service.ValidatorService
-repository/UserRepositoryImpl.java
- repository.UserRepositoryImpl
-servlet/LoginServlet.java
- servlet.LoginServlet
-repository/AdvertRepositoryImpl.java
- repository.AdvertRepositoryImpl
+config/ConfigConnection.java
+ config.ConfigConnection
+config/table/Util.java
+ config.table.Util
+repository/AdvertRepository.java
+ repository.AdvertRepository
+servlet/UserServlet.java
+ servlet.UserServlet

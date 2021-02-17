@@ -3,9 +3,6 @@ V
 &src/main/java/service/UserService.java,f\2\f2bf6a3d9f14ae9a85e78a6ec1a3f81261e3329c
 ^
 .src/test/java/config/ConfigConnectionTest.java,8\3\83be1e89d24c6d792fd426a146e46fd48fa909af
-:
-
-.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 `
 0src/test/java/repository/UserRepositoryTest.java,7\d\7d38204855ca47abd04113634871fb37b3b170ef
 [

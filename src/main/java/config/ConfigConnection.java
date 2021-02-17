@@ -31,10 +31,10 @@ public class ConfigConnection {
         String password = "root";
         try {
             connection = DriverManager.getConnection(localhost, username, password);
-            Class.forName("org.postgresql.Driver");
+            //Class.forName("org.postgresql.Driver");
             createTableUsers();
             createTableAdverts();
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException /*| ClassNotFoundException*/ e) {
             logger.error(e.getMessage());
         }
         return connection;
