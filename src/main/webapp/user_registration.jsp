@@ -21,7 +21,7 @@
 <h1 class="label-sign-up">Sign up</h1>
 <div class="registration-container">
     <div class="container">
-        <form action="users" method="post">
+        <form action="registration" method="post">
             <div class="sign-up-content">
                 <div class="mb-3">
                     <label for="inputFirstName" class="form-label">Please, enter your first name</label>

@@ -1,11 +1,21 @@
 package main;
 
+import model.Advert;
+import model.Heading;
+import model.Role;
+import model.User;
+import repository.AdvertRepository;
+import repository.CrudRepository;
+import repository.UserRepository;
+
+import java.time.LocalDate;
+
 public class Main {
     public static void main(String[] args) {
-       /* User user1 = new User("Anna", "Barb", "anna@g.com", LocalDate.now(), true, Role.ADMIN);
-        User user2 = new User("Viktoria", "Barb", "viktoriya@g.com", LocalDate.now(), true, Role.USER);
-        User user3 = new User("Karla", "Barb", "karla@g.com", LocalDate.now(), true, Role.USER);
-        User user4 = new User("Albina", "Barb", "albina@g.com", LocalDate.now(), true, Role.ANONIM);
+        User user1 = new User("Anna", "Barb", "anna@g.com", LocalDate.now(), true, Role.ADMIN, "");
+        User user2 = new User("Viktoria", "Barb", "viktoriya@g.com", LocalDate.now(), true, Role.USER, "");
+        User user3 = new User("Karla", "Barb", "karla@g.com", LocalDate.now(), true, Role.USER, "");
+        User user4 = new User("Albina", "Barb", "albina@g.com", LocalDate.now(), true, Role.ANONIM, "");
         CrudRepository<User> userRepository = new UserRepository();
         userRepository.save(user1);
         userRepository.save(user2);
@@ -52,6 +62,6 @@ public class Main {
         advertRepository.save(advert4);
         advertRepository.save(advert5);
         advertRepository.save(advert6);
-        System.out.println(advertRepository.findAll());*/
+        System.out.println(advertRepository.findAll());
     }
 }

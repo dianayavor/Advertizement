@@ -144,11 +144,11 @@ public class UserRepository implements UserRepositoryImpl, CrudRepository<User> 
         StringBuilder query = new StringBuilder();
         User user = new User();
         query.append("select * from ").append(TABLE_NAME_USERS)
-                .append("where ")
-                .append(TABLE_FIELD_EMAIL).append("=")
-                .append(login).append(" and ")
-                .append(TABLE_FIELD_PASSWORD).append("=")
-                .append(password);
+                .append(" where ")
+                .append(TABLE_FIELD_EMAIL).append("='")
+                .append(login).append("' and ")
+                .append(TABLE_FIELD_PASSWORD).append("='")
+                .append(password).append("'");
         try (ResultSet result = getConnection().createStatement().executeQuery(query.toString())) {
             while (result.next()) {
                 user = getObject(result);

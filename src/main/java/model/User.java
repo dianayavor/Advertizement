@@ -1,8 +1,6 @@
 package model;
 
 import javax.validation.constraints.Email;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -15,18 +13,12 @@ public class User implements Serializable {
     @NotNull
     private Long id;
 
-    @Min(1)
-    @Max(20)
     @NotNull
     private String firstName;
 
-    @Min(1)
-    @Max(20)
     @NotNull
     private String lastName;
 
-    @Min(1)
-    @Max(20)
     @NotNull
     @Email
     private String email;
@@ -49,8 +41,8 @@ public class User implements Serializable {
     public User() {
     }
 
-    public User(@Min(1) @Max(20) @NotNull String firstName, @Min(1) @Max(20) @NotNull String lastName,
-                @Min(1) @Max(20) @NotNull @Email String email, @NotNull LocalDate dateOfBirth,
+    public User(@NotNull String firstName, @NotNull String lastName,
+                @NotNull @Email String email, @NotNull LocalDate dateOfBirth,
                 @NotNull boolean isActiveAccount, @NotNull Role role, @NotNull String password) {
         super();
         this.firstName = firstName;

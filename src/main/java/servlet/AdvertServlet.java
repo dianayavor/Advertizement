@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+import static servlet.ServletUtil.dispatcher;
+
 @WebServlet("/adverts")
 public class AdvertServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
@@ -25,21 +27,17 @@ public class AdvertServlet extends HttpServlet {
         showAdverts(req, resp);
     }
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        showAdverts(req, resp);
-    }
-
     private void showAdverts(HttpServletRequest req, HttpServletResponse resp) {
         AdvertService service = new AdvertService();
         List<Advert> adverts = service.findAll();
         req.setAttribute("adverts", adverts);
 
-        try {
-            RequestDispatcher dispatcher = req.getRequestDispatcher("advert_list.jsp");
-            dispatcher.forward(req, resp);
-        } catch (ServletException | IOException e) {
-            logger.error(e.getMessage());
-        }
+        RequestDispatcher dispatcher = req.getRequestDispatcher("advert_list.jsp");
+        dispatcher(req, resp, dispatcher);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        showAdverts(req, resp);
     }
 }

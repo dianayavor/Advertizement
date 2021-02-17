@@ -18,6 +18,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+import static servlet.ServletUtil.dispatcher;
+
 @WebServlet("/users")
 public class UserServlet extends HttpServlet {
     private final Logger logger = LogManager.getLogger(UserServlet.class);
@@ -65,11 +67,7 @@ public class UserServlet extends HttpServlet {
         RequestDispatcher dispatcher = req.getRequestDispatcher("user_list.jsp");
         List<User> users = userService.findAll();
         req.setAttribute("users", users);
-        try {
-            dispatcher.forward(req, resp);
-        } catch (ServletException | IOException e) {
-            logger.error(e.getMessage());
-        }
+        dispatcher(req, resp, dispatcher);
     }
 
     @Override

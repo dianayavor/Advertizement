@@ -20,7 +20,7 @@
 </head>
 <body>
 <div class="login-container">
-    <form class="form-login" method="post" action="adverts">
+    <form class="form-login" method="post" action="login">
         <h1 class="label-sign-in">Log in</h1>
         <div class="container">
             <div class="sign-up-content">
