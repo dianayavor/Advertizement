@@ -19,14 +19,20 @@ import java.util.List;
 import java.util.Map;
 
 import static servlet.ServletUtil.dispatcher;
+import static servlet.ServletUtil.servletContext;
 
 @WebServlet("/users")
 public class UserServlet extends HttpServlet {
-    private final Logger logger = LogManager.getLogger(UserServlet.class);
-    final UserService userService = new UserService();
+    private final static Logger logger = LogManager.getLogger(UserServlet.class);
+    private UserService userService = new UserService();
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
+    public void init() throws ServletException {
+        servletContext = getServletContext();
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         showUsers(req, resp);
     }
 

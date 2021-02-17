@@ -1,5 +1,5 @@
-config/ConfigConnection.java
- config.ConfigConnection
+model/User.java
+ model.User
 model/Role.java
  model.Role
 model/Heading.java
@@ -10,37 +10,35 @@ config/table/Util.java
  config.table.Util
 servlet/filter/LoginFilter.java
  servlet.filter.LoginFilter
-repository/AdvertRepositoryImpl.java
- repository.AdvertRepositoryImpl
-repository/UserRepository.java
- repository.UserRepository
 service/ValidatorService.java
  service.ValidatorService
+repository/AdvertRepositoryImpl.java
+ repository.AdvertRepositoryImpl
+repository/UserRepositoryImpl.java
+ repository.UserRepositoryImpl
 config/table/TableAdverts.java
  config.table.TableAdverts
 config/table/TableUsers.java
  config.table.TableUsers
-repository/AdvertRepository.java
- repository.AdvertRepository
 model/Advert.java
  model.Advert
-model/User.java
- model.User
-main/Main.java
- main.Main
+config/ConfigConnection.java
+ config.ConfigConnection
 service/AdvertService.java
  service.AdvertService
-service/UserService.java
- service.UserService
-repository/UserRepositoryImpl.java
- repository.UserRepositoryImpl
+repository/UserRepository.java
+ repository.UserRepository
 servlet/RegistrationServlet.java
  servlet.RegistrationServlet
 servlet/UserServlet.java
  servlet.UserServlet
-servlet/ServletUtil.java
- servlet.ServletUtil
 servlet/AdvertServlet.java
  servlet.AdvertServlet
+servlet/ServletUtil.java
+ servlet.ServletUtil
+service/UserService.java
+ service.UserService
+repository/AdvertRepository.java
+ repository.AdvertRepository
 servlet/LoginServlet.java
  servlet.LoginServlet

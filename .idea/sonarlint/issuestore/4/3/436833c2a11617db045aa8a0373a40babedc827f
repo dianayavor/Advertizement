@@ -1,24 +1,7 @@
 
-Z
-java:S18541"8Remove this useless assignment to local variable "role".(Òãõ€ûÿÿÿÿ8Ü¡Šàú.
-_
-java:S1854-"=Remove this useless assignment to local variable "firstname".(ÓöÅúÿÿÿÿ8Ü¡Šàú.
-Y
-java:S18540"7Remove this useless assignment to local variable "dob".(›êòİÿÿÿÿÿ8Ü¡Šàú.
-K
-java:S14811")Remove this unused "role" local variable.(Òãõ€ûÿÿÿÿ8Ü¡Šàú.
-J
-java:S14810"(Remove this unused "dob" local variable.(›êòİÿÿÿÿÿ8Ü¡Šàú.
-^
-java:S1854."<Remove this useless assignment to local variable "lastname".(ùÓ¯şÿÿÿÿ8Ü¡Šàú.
-m
-java:S1301!"KReplace this "switch" statement by "if" statements to increase readability.(ë´åİşÿÿÿÿ8ùÙÛú.
 G
-java:S1481/"*Remove this unused "email" local variable.(¯¼›œ8Ü¡Šàú.
-P
-java:S1481-".Remove this unused "firstname" local variable.(ÓöÅúÿÿÿÿ8Ü¡Šàú.
-V
-java:S1854/"9Remove this useless assignment to local variable "email".(¯¼›œ8Ü¡Šàú.
-O
-java:S1481."-Remove this unused "lastname" local variable.(ùÓ¯şÿÿÿÿ8Ü¡Šàú.
-]	java:S1253"<This block of commented-out lines of code should be removed.(ô ½¶üÿÿÿÿ8Ü¡Šàú.
+java:S1068"*Remove this unused "logger" private field.(Íßâï8ƒ¾Åÿú.
+T
+java:S11357"2Complete the task associated to this TODO comment.(©…€¸ûÿÿÿÿ8ş†áúú.
+w
+java:S1989V"ZHandle the following exception that could be thrown by "parseLong": NumberFormatException.(ÄË†è8ıĞºıú.

@@ -17,7 +17,7 @@ import static config.table.TableUsers.TABLE_NAME_USERS;
 
 public class AdvertRepository implements CrudRepository<Advert>, AdvertRepositoryImpl {
     private final Logger logger = LogManager.getLogger(AdvertRepository.class);
-    StringBuilder query = new StringBuilder();
+    private StringBuilder query = new StringBuilder();
 
     @Override
     public Advert save(Advert advert) {

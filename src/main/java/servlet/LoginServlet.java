@@ -12,14 +12,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-import static servlet.ServletUtil.createHashCodedPassword;
-import static servlet.ServletUtil.dispatcher;
+import static servlet.ServletUtil.*;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private final Logger logger = LogManager.getLogger(LoginServlet.class);
-    final UserService userService = new UserService();
+    private UserService userService = new UserService();
+
+    @Override
+    public void init() throws ServletException {
+        servletContext = getServletContext();
+    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
@@ -32,14 +36,19 @@ public class LoginServlet extends HttpServlet {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
 
-        String hashedPassword = createHashCodedPassword(password);
+        String hashedPassword = hashPassword(password);
 
-        if (userService.findByLoginAndPassword(username, hashedPassword).getId() != null) {
+        if (checkPassword(password, hashedPassword)) {
             RequestDispatcher rd = getServletContext().getRequestDispatcher("/adverts");
             dispatcher(req, resp, rd);
         } else {
             logger.error("error: Invalid login or password!");
             resp.getWriter().write("error: Invalid login or password!");
         }
+    }
+
+    @Override
+    public void destroy() {
+        servletContext = null;
     }
 }

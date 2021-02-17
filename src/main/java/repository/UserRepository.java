@@ -149,6 +149,7 @@ public class UserRepository implements UserRepositoryImpl, CrudRepository<User> 
                 .append(login).append("' and ")
                 .append(TABLE_FIELD_PASSWORD).append("='")
                 .append(password).append("'");
+
         try (ResultSet result = getConnection().createStatement().executeQuery(query.toString())) {
             while (result.next()) {
                 user = getObject(result);

@@ -15,12 +15,19 @@ import java.io.IOException;
 import java.util.List;
 
 import static servlet.ServletUtil.dispatcher;
+import static servlet.ServletUtil.servletContext;
 
 @WebServlet("/adverts")
 public class AdvertServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
+    private AdvertService service = new AdvertService();
 
     private final Logger logger = LogManager.getLogger(AdvertServlet.class);
+
+    @Override
+    public void init() throws ServletException {
+        servletContext = getServletContext();
+    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
@@ -28,7 +35,6 @@ public class AdvertServlet extends HttpServlet {
     }
 
     private void showAdverts(HttpServletRequest req, HttpServletResponse resp) {
-        AdvertService service = new AdvertService();
         List<Advert> adverts = service.findAll();
         req.setAttribute("adverts", adverts);
 
@@ -39,5 +45,10 @@ public class AdvertServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         showAdverts(req, resp);
+    }
+
+    @Override
+    public void destroy() {
+        servletContext = null;
     }
 }

@@ -10,7 +10,7 @@ import java.util.List;
 
 public class AdvertService {
     private final Logger logger = LogManager.getLogger(AdvertService.class);
-    ValidatorService validatorService = new ValidatorService();
+    private final ValidatorService validatorService = new ValidatorService();
 
     private final CrudRepository<Advert> advertRepository = new AdvertRepository();
 

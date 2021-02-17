@@ -13,13 +13,17 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDate;
 
-import static servlet.ServletUtil.createHashCodedPassword;
-import static servlet.ServletUtil.dispatcher;
+import static servlet.ServletUtil.*;
 
 @WebServlet("/registration")
 public class RegistrationServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private final UserService userService = new UserService();
+    private UserService userService = new UserService();
+
+    @Override
+    public void init() throws ServletException {
+        servletContext = getServletContext();
+    }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
@@ -27,7 +31,7 @@ public class RegistrationServlet extends HttpServlet {
         String repeatPassword = req.getParameter("passwordRepeat");
 
         if (password.equals(repeatPassword)) {
-            String hashedPassword = createHashCodedPassword(password);
+            String hashedPassword = hashPassword(password);
             User user = new User(req.getParameter("firstname"), req.getParameter("lastname"), req.getParameter("email"), LocalDate.now(), true, Role.USER, hashedPassword);
             userService.save(user);
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/adverts");
@@ -41,5 +45,10 @@ public class RegistrationServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         RequestDispatcher dispatcher = req.getRequestDispatcher("user_registration.jsp");
         dispatcher(req, resp, dispatcher);
+    }
+
+    @Override
+    public void destroy() {
+        servletContext = null;
     }
 }

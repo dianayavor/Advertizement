@@ -1,14 +1,9 @@
 
-P
-java:S1144+"3Remove this unused private "loadProperties" method.(»ÕÚó8áÉïŞú.
-g
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(…¦¢Öøÿÿÿÿ8áÉïŞú.
-W	java:S125"<This block of commented-out lines of code should be removed.(ºÆÖ=8áÉïŞú.
-O
-java:S4925""-Remove this "Class.forName()", it is useless.(õ†¨Äùÿÿÿÿ8±ùïŞú.
-]	java:S125"<This block of commented-out lines of code should be removed.(ú¹ãŒıÿÿÿÿ8áÉïŞú.
 W
-java:S1118":Add a private constructor to hide the implicit public one.(³™Ó8áÉïŞú.
+java:S1118":Add a private constructor to hide the implicit public one.(³™Ó8áÉïŞú.
+O
+java:S4925"-Remove this "Class.forName()", it is useless.(õ†¨Äùÿÿÿÿ8Ğ·‹„û.
 g
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ŒşÕ¸úÿÿÿÿ8áÉïŞú.
-X	java:S125"<This block of commented-out lines of code should be removed.(ø¯Òˆ8áÉïŞú.
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(…¦¢Öøÿÿÿÿ8áÉïŞú.
+g
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ŒşÕ¸úÿÿÿÿ8áÉïŞú.

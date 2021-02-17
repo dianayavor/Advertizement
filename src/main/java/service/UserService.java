@@ -13,7 +13,6 @@ public class UserService {
     private final Logger logger = LogManager.getLogger(UserService.class);
 
     private final CrudRepository<User> crudUserRepository = new UserRepository();
-
     private final UserRepositoryImpl userRepository = new UserRepository();
 
     public User save(User user) {

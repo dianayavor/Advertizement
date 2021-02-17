@@ -1,12 +1,3 @@
 
-b
-java:S1124!"EReorder the modifiers to comply with the Java Language Specification.(®ÙÂš8Àà´Ùú.
-f
-java:S11924"IDefine a constant instead of duplicating this literal "/adverts" 4 times.(Ş›õ8Ñ³îÙú.
-X	java:S125'"<This block of commented-out lines of code should be removed.(×ç™‹8ı‡öÜú.
-b
-java:S1124""EReorder the modifiers to comply with the Java Language Specification.(ÂÚ”æ8Àà´Ùú.
-g
-java:S1124#"EReorder the modifiers to comply with the Java Language Specification.(ğ®–Ûûÿÿÿÿ8Àà´Ùú.
-a
-java:S1117B"?Rename "userService" which hides the field declared at line 31.( óŒİÿÿÿÿÿ8¢›İÜú.
+r
+java:S1989*"PHandle the following exception that could be thrown by "getWriter": IOException.(‡í¥¶ÿÿÿÿÿ8ƒ¢§ÿú.
