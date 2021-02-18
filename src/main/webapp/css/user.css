@@ -21,3 +21,6 @@ body {
 .btn-login, .btn-signup {
     margin: 10px;
 }
+.btn-edit {
+    margin-right: 10px;
+}

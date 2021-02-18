@@ -28,7 +28,7 @@
                     <input type="text" class="form-control" id="inputFirstName" name="firstname">
                 </div>
                 <div class="form-group">
-                    <label for="inputLastName" class="form-label">Please, enter your first name</label>
+                    <label for="inputLastName" class="form-label">Please, enter your last name</label>
                     <input type="text" class="form-control" id="inputLastName" name="lastname">
                 </div>
                 <div class="form-group">

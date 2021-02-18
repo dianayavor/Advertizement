@@ -21,13 +21,15 @@
 <body>
 <div class="login-container" align="center">
     <h1 class="label-sign-in">Log in</h1>
-    <form class="form-login" method="post" action="login">
+    <form class="form-login" method="post" action="adverts">
         <div class="container">
             <div class="sign-up-content">
+                <%--                <form>--%>
                 <div class="form-group">
                     <label for="inputEmail" class="form-label">Please, enter your email address</label>
                     <input type="email" class="form-control" id="inputEmail" name="username">
                 </div>
+                <%--                </form>--%>
                 <div class="form-group">
                     <label for="inputPassword" class="form-label">Enter password</label>
                     <input type="password" id="inputPassword" class="form-control" name="password">

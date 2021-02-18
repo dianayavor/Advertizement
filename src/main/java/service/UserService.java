@@ -1,5 +1,6 @@
 package service;
 
+import model.Advert;
 import model.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -42,5 +43,9 @@ public class UserService {
 
     public User findByLogin(String login) {
         return userRepository.findByLogin(login);
+    }
+
+    public List<Advert> findAllByUserId(Long id) {
+        return userRepository.findAllByUserId(id);
     }
 }

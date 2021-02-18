@@ -17,10 +17,10 @@ import static config.table.TableUsers.TABLE_NAME_USERS;
 
 public class AdvertRepository implements CrudRepository<Advert>, AdvertRepositoryImpl {
     private final Logger logger = LogManager.getLogger(AdvertRepository.class);
-    private StringBuilder query = new StringBuilder();
 
     @Override
     public Advert save(Advert advert) {
+        StringBuilder query = new StringBuilder();
         query.append("insert into ").append(TABLE_NAME_ADVERTS).append("(")
                 .append(TABLE_FIELD_TITLE).append(", ")
                 .append(TABLE_FIELD_DESCRIPTION).append(", ")
@@ -44,7 +44,6 @@ public class AdvertRepository implements CrudRepository<Advert>, AdvertRepositor
                 advert.setId((long) result.getInt(1));
             }
             result.close();
-            query.delete(0, query.length());
         } catch (SQLException e) {
             logger.error(e.getMessage());
         }
@@ -53,6 +52,7 @@ public class AdvertRepository implements CrudRepository<Advert>, AdvertRepositor
 
     @Override
     public Advert update(Advert advert) {
+        StringBuilder query = new StringBuilder();
         query.append("update ").append(TABLE_NAME_ADVERTS).append(" set ")
                 .append(TABLE_FIELD_TITLE).append("=?, ")
                 .append(TABLE_FIELD_DESCRIPTION).append("=?, ")
@@ -66,7 +66,6 @@ public class AdvertRepository implements CrudRepository<Advert>, AdvertRepositor
             ps.setBoolean(4, advert.getActive());
             ps.setLong(5, advert.getId());
             ps.executeUpdate();
-            query.delete(0, query.length());
         } catch (SQLException e) {
             logger.error(e.getLocalizedMessage());
         }
@@ -75,11 +74,11 @@ public class AdvertRepository implements CrudRepository<Advert>, AdvertRepositor
 
     @Override
     public boolean delete(Long id) {
+        StringBuilder query = new StringBuilder();
         query.append("delete from ").append(TABLE_NAME_ADVERTS).append(" where id=?");
         try (PreparedStatement ps = getConnection().prepareStatement(query.toString())) {
             ps.setLong(1, id);
             ps.executeUpdate();
-            query.delete(0, query.length());
             return true;
         } catch (SQLException e) {
             logger.error(e.getLocalizedMessage());
@@ -89,6 +88,7 @@ public class AdvertRepository implements CrudRepository<Advert>, AdvertRepositor
 
     @Override
     public Advert findById(Long id) {
+        StringBuilder query = new StringBuilder();
         query.append("select * from ").append(TABLE_NAME_ADVERTS).append(" where id=?");
         Advert advert = null;
         try (PreparedStatement ps = getConnection().prepareStatement(query.toString())) {
@@ -97,7 +97,6 @@ public class AdvertRepository implements CrudRepository<Advert>, AdvertRepositor
             while (result.next()) {
                 advert = getObject(result);
             }
-            query.delete(0, query.length());
         } catch (Exception e) {
             logger.error(e.getMessage());
         }
@@ -106,13 +105,13 @@ public class AdvertRepository implements CrudRepository<Advert>, AdvertRepositor
 
     @Override
     public List<Advert> findAll() {
+        StringBuilder query = new StringBuilder();
         List<Advert> adverts = new ArrayList<>();
         query.append("select * from ").append(TABLE_NAME_ADVERTS);
         try (ResultSet result = getConnection().createStatement().executeQuery(query.toString())) {
             while (result.next()) {
                 adverts.add(getObject(result));
             }
-            query.delete(0, query.length());
         } catch (Exception e) {
             logger.error(e.getMessage());
         }

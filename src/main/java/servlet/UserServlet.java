@@ -7,7 +7,6 @@ import org.apache.logging.log4j.Logger;
 import service.UserService;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,29 +17,48 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-import static servlet.ServletUtil.dispatcher;
-import static servlet.ServletUtil.servletContext;
+import static servlet.ServletUtil.*;
 
-@WebServlet("/users")
+@WebServlet(urlPatterns = {"/users"/*, "/users/delete", "/users/edit"*/})
 public class UserServlet extends HttpServlet {
     private final static Logger logger = LogManager.getLogger(UserServlet.class);
     private UserService userService = new UserService();
 
     @Override
-    public void init() throws ServletException {
+    public void init() {
         servletContext = getServletContext();
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
         showUsers(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        User user = formatParamsGetUser(req);
-        userService.save(user);
-        showUsers(req, resp);
+        Map<String, String[]> params = req.getParameterMap();
+        long id = -1L;
+        if (params.containsKey("id")) {
+            id = Long.parseLong(removeBraces(Arrays.toString(params.get("id"))));
+        }
+
+        String action = req.getServletPath();
+
+        switch (action) {
+            case "users/edit":
+                updateUser(id, req, resp);
+                break;
+            case "users/delete":
+                deleteUser(id, resp, req);
+                break;
+            case "users/registration":
+                User user = formatParamsGetUser(req);
+                userService.save(user);
+                showUsers(req, resp);
+                break;
+            default:
+                showUsers(req, resp);
+        }
     }
 
     private User formatParamsGetUser(HttpServletRequest req) {
@@ -69,33 +87,26 @@ public class UserServlet extends HttpServlet {
         return user;
     }
 
-    private void showUsers(HttpServletRequest req, HttpServletResponse resp) {
-        RequestDispatcher dispatcher = req.getRequestDispatcher("user_list.jsp");
+    private boolean showUsers(HttpServletRequest req, HttpServletResponse resp) {
         List<User> users = userService.findAll();
         req.setAttribute("users", users);
+        RequestDispatcher dispatcher = req.getRequestDispatcher("user_list.jsp");
         dispatcher(req, resp, dispatcher);
+        return true;
     }
 
-    @Override
-    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        User user = formatParamsGetUser(req);
-        userService.update(user);
-        showUsers(req, resp);
+    private boolean updateUser(long id, HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        User user = userService.findById(id);
+        req.setAttribute("user", user);
+        //resp.sendRedirect("/users");
+        //RequestDispatcher dispatcher = req.getRequestDispatcher("user_edit.jsp");
+        //dispatcher(req, resp, dispatcher);
+        return true;
     }
 
-    @Override
-    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, NumberFormatException {
-        Map<String, String[]> params = req.getParameterMap();
-
-        long id = -1L;
-        if (params.containsKey("id")) {
-            id = Long.parseLong(removeBraces(Arrays.toString(params.get("id"))));
-        }
+    private boolean deleteUser(long id, HttpServletResponse resp, HttpServletRequest req) {
         userService.delete(id);
-        showUsers(req, resp);
-    }
-
-    private String removeBraces(String text) {
-        return text.replace("[", "").replace("]", "");
+        //showUsers(req, resp);
+        return true;
     }
 }

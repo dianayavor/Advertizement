@@ -15,8 +15,6 @@ O
 src/main/java/model/Advert.java,8\2\8201c4d96e0a9ebc0ae08823cf645ea1e6d8a86c
 b
 2src/test/java/repository/AdvertRepositoryTest.java,3\a\3aab673b55932558c89cf35cb60df8b2c9f6ab62
-L
-src/main/java/main/Main.java,7\f\7f08be4e9c62f2e5f8f02242af89b918cb9a135f
 ?
 settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
 X
@@ -73,7 +71,5 @@ L
 gradlew,5\b\5bbfa66edb4db3c7c33c5181f43510990d3307f9
 V
 &src/main/java/servlet/ServletUtil.java,2\1\21cd2d29d531629efe625d928a448414504ed423
-`
-0src/main/webapp/WEB-INF/properties/db.properties,1\4\146690855ef95e16159caca4fbaaac3b5cf1ff1e
 W
 'src/main/webapp/resources/db.properties,1\3\13b620adfd336fd6fd0151a6c4b8d5b8d0113ef7

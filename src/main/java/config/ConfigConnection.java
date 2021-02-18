@@ -2,13 +2,15 @@ package config;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import servlet.ServletUtil;
+import org.postgresql.Driver;
 
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
+
+import static servlet.ServletUtil.servletContext;
 
 public class ConfigConnection {
     private final static Logger logger = LogManager.getLogger(ConfigConnection.class);
@@ -17,7 +19,8 @@ public class ConfigConnection {
         Connection connection = null;
         Properties properties = new Properties();
         try {
-            properties.load(ServletUtil.servletContext.getResourceAsStream("/resources/db.properties"));
+            DriverManager.registerDriver(new Driver());
+            properties.load(servletContext.getResourceAsStream("/resources/db.properties"));
             String localhost = properties.getProperty("localhost");
             String username = properties.getProperty("username");
             String password = properties.getProperty("password");

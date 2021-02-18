@@ -1,5 +1,5 @@
 package model;
 
 public enum Heading {
-	HAPPINESS, SPORT, GAMES, PROGRAMING
+	HAPPINESS, SPORT, GAMES, PROGRAMING, ANIMAL
 }

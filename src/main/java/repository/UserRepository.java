@@ -1,5 +1,7 @@
 package repository;
 
+import model.Advert;
+import model.Heading;
 import model.Role;
 import model.User;
 import org.apache.logging.log4j.LogManager;
@@ -11,6 +13,8 @@ import java.util.List;
 import java.util.Map;
 
 import static config.ConfigConnection.getConnection;
+import static config.table.TableAdverts.TABLE_FIELD_AUTHOR;
+import static config.table.TableAdverts.TABLE_NAME_ADVERTS;
 import static config.table.TableUsers.*;
 
 public class UserRepository implements UserRepositoryImpl, CrudRepository<User> {
@@ -164,14 +168,14 @@ public class UserRepository implements UserRepositoryImpl, CrudRepository<User> 
         StringBuilder query = new StringBuilder();
         User user = new User();
         query.append("select * from ").append(TABLE_NAME_USERS)
-                .append("where ")
-                .append(TABLE_FIELD_EMAIL).append("=")
-                .append(login);
+                .append(" where ")
+                .append(TABLE_FIELD_EMAIL).append("='")
+                .append(login).append("'");
         try (ResultSet result = getConnection().createStatement().executeQuery(query.toString())) {
             while (result.next()) {
                 user = getObject(result);
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             logger.error(e.getMessage());
         }
         return user;
@@ -191,6 +195,43 @@ public class UserRepository implements UserRepositoryImpl, CrudRepository<User> 
         }
         String query = "select * from users " + builder.toString();
         return new ArrayList<>(execute(query));
+    }
+
+    public List<Advert> findAllByUserId(Long id) {
+        StringBuilder query = new StringBuilder();
+        query.append("select * from ")
+                .append(TABLE_NAME_ADVERTS)
+                .append(" where ")
+                .append(TABLE_FIELD_AUTHOR)
+                .append("='")
+                .append(id)
+                .append("'");
+        List<Advert> adverts = new ArrayList<>();
+        try (ResultSet result = getConnection().createStatement().executeQuery(query.toString())) {
+            while (result.next()) {
+                Advert advert = null;
+                try {
+                    advert = new Advert();
+                    advert.setId((long) result.getInt("id"));
+                    advert.setTitle(result.getString("title"));
+                    advert.setDescription(result.getString("description"));
+                    advert.setHeading(Heading.valueOf(result.getString("heading")));
+                    advert.setActive(result.getBoolean("is_active"));
+                    advert.setDateOfCreation(new Date(result.getDate("date_of_creation").getTime()).toLocalDate());
+                    User user = new User();
+                    user.setId((long) result.getInt("author"));
+                    UserRepository userRepository = new UserRepository();
+                    user = userRepository.findById(user.getId());
+                    advert.setAuthor(user);
+                } catch (SQLException e) {
+                    logger.error(e.getMessage());
+                }
+                adverts.add(advert);
+            }
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+        }
+        return adverts;
     }
 
     public List<User> execute(String query) {

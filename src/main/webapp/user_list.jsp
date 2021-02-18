@@ -45,25 +45,24 @@
             <td><c:out value="${user.activeAccount}"/></td>
             <td><c:out value="${user.role}"/></td>
             <td>
-                <div class="btn-group" role="group">
-                    <form action="users" method="post">
-                        <input type="hidden" name="_method" value="post">
-                        <input type="hidden" name="user" value="<c:if test="${user.id != null}">${user}</c:if>"/>
-                        <button type="button" class="btn btn-outline-primary">Edit</button>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <form method="post" action=users/edit>
+                        <input type="hidden" name="id" value="${user.id}">
+                        <div class="btn-edit">
+                            <button type="submit" class="btn btn-light">Edit</button>
+                        </div>
                     </form>
-                    <form action="users" method="post">
-                        <input type="hidden" name="_method" value="delete">
-                        <input type="hidden" name="user" value="<c:if test="${user.id != null}">${user.id}</c:if>"/>
-                        <button type="button" class="btn btn-outline-primary">Delete</button>
+                    <form method="post" action=users/delete>
+                        <input type="hidden" name="id" value="${user.id}">
+                        <button type="submit" class="btn btn-light">Delete</button>
                     </form>
-                        <%--                    <a href="edit?advertId=<c:out value='${user.id}' />"> Edit </a>--%>
-                        <%--                    <a href="delete?advertId=<c:out value='${user.id}' />"> Delete </a>--%>
                 </div>
+
             </td>
             </c:forEach>
         </tr>
         </tbody>
-    </table class="table">
+    </table>
 </div>
 </body>
 </html>

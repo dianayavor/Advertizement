@@ -32,7 +32,7 @@ public class ServletUtil {
         }
     }
 
-    public static String createHashCodedPassword(final String password) {
+    public static String createToken(final String password) {
         return Jwts.builder()
                 .setSubject(password)
                 .signWith(SIGNATURE_ALGORITHM, SECRET_KEY)
@@ -46,5 +46,9 @@ public class ServletUtil {
 
     public static boolean checkPassword(String password, String storedHash) {
         return BCrypt.checkpw(password, storedHash);
+    }
+
+    public static String removeBraces(String text) {
+        return text.replace("[", "").replace("]", "");
     }
 }

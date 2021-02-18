@@ -1,6 +1,5 @@
 package servlet;
 
-import model.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import service.UserService;
@@ -34,20 +33,6 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String username = req.getParameter("username");
-        String password = req.getParameter("password");
-
-        String hashedPassword = hashPassword(password);
-
-        if (checkPassword(password, hashedPassword)) {
-            User user = userService.findByLogin(username);
-            //todo send user to adverts page
-            RequestDispatcher rd = getServletContext().getRequestDispatcher("/adverts");
-            dispatcher(req, resp, rd);
-        } else {
-            logger.error("error: Invalid login or password!");
-            resp.getWriter().write("error: Invalid login or password!");
-        }
     }
 
     @Override

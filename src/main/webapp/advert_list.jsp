@@ -48,13 +48,20 @@
         body {
             background: #ededed;
         }
+
         .container-header {
             margin-left: 100px;
+        }
+        .link-my-profile {
+            align-items: end;
         }
     </style>
     <div class="navbar navbar-dark bg-dark">
         <div class="container-header">
             <a href="users" class="navbar-brand">Users</a>
+            <a href="my-adverts" class="navbar-brand">My adverts</a>
+            <a href="adverts" class="navbar-brand">Adverts</a>
+            <a href="" class="navbar-brand">${requestScope.user.firstName} ${requestScope.user.lastName}</a>
         </div>
     </div>
 </head>
