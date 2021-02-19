@@ -1,9 +1,9 @@
-.form-registration, .form-login {
+.form-registration, .form-login, .form-edit {
     width: 300px;
     align-content: center;
 }
 
-.label-sign-up, .label-sign-in {
+.label-sign-up, .label-sign-in, .label-edit {
     align-content: center;
 }
 
@@ -18,9 +18,14 @@ body {
 .container-header {
     margin-left: 100px;
 }
-.btn-login, .btn-signup {
+.btn-login, .btn-signup{
     margin: 10px;
 }
-.btn-edit {
-    margin-right: 10px;
+.container {
+    align-items: center;
+    align-self: center;
 }
+.btn-delete{
+    margin-left: 10px;
+}
+

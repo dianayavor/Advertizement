@@ -19,10 +19,10 @@ import java.util.Map;
 
 import static servlet.ServletUtil.*;
 
-@WebServlet(urlPatterns = {"/users"/*, "/users/delete", "/users/edit"*/})
+@WebServlet(urlPatterns = {"/users", "/users/delete", "/users/edit", "/users/edited"})
 public class UserServlet extends HttpServlet {
     private final static Logger logger = LogManager.getLogger(UserServlet.class);
-    private UserService userService = new UserService();
+    private final UserService userService = new UserService();
 
     @Override
     public void init() {
@@ -45,19 +45,21 @@ public class UserServlet extends HttpServlet {
         String action = req.getServletPath();
 
         switch (action) {
-            case "users/edit":
+            case "/users/edit":
                 updateUser(id, req, resp);
                 break;
-            case "users/delete":
+            case "/users/delete":
                 deleteUser(id, resp, req);
                 break;
-            case "users/registration":
-                User user = formatParamsGetUser(req);
-                userService.save(user);
-                showUsers(req, resp);
+            case "/registration":
+                saveUser(req, resp);
+                break;
+            case "/users/edited":
+                updatedUser(req, resp);
                 break;
             default:
                 showUsers(req, resp);
+                break;
         }
     }
 
@@ -66,6 +68,9 @@ public class UserServlet extends HttpServlet {
 
         User user = new User();
 
+        if (params.containsKey("id")) {
+            user.setId(Long.parseLong(removeBraces(Arrays.toString(params.get("id")))));
+        }
         if (params.containsKey("firstname")) {
             user.setFirstName(removeBraces(Arrays.toString(params.get("firstname"))));
         }
@@ -90,7 +95,7 @@ public class UserServlet extends HttpServlet {
     private boolean showUsers(HttpServletRequest req, HttpServletResponse resp) {
         List<User> users = userService.findAll();
         req.setAttribute("users", users);
-        RequestDispatcher dispatcher = req.getRequestDispatcher("user_list.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/user_list.jsp");
         dispatcher(req, resp, dispatcher);
         return true;
     }
@@ -98,15 +103,30 @@ public class UserServlet extends HttpServlet {
     private boolean updateUser(long id, HttpServletRequest req, HttpServletResponse resp) throws IOException {
         User user = userService.findById(id);
         req.setAttribute("user", user);
-        //resp.sendRedirect("/users");
-        //RequestDispatcher dispatcher = req.getRequestDispatcher("user_edit.jsp");
-        //dispatcher(req, resp, dispatcher);
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/user_edit.jsp");
+        dispatcher(req, resp, dispatcher);
         return true;
     }
 
-    private boolean deleteUser(long id, HttpServletResponse resp, HttpServletRequest req) {
+    private boolean deleteUser(long id, HttpServletResponse resp, HttpServletRequest req) throws IOException {
         userService.delete(id);
-        //showUsers(req, resp);
+        List<User> users = userService.findAll();
+        req.setAttribute("users", users);
+        resp.sendRedirect("/webappadw/users");
+        return true;
+    }
+
+    private boolean updatedUser(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        User user = formatParamsGetUser(req);
+        userService.update(user);
+        resp.sendRedirect("/webappadw/users");
+        return true;
+    }
+
+    private boolean saveUser(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        User user = formatParamsGetUser(req);
+        userService.save(user);
+        resp.sendRedirect("/users");
         return true;
     }
 }

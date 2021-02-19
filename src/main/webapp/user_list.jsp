@@ -45,19 +45,18 @@
             <td><c:out value="${user.activeAccount}"/></td>
             <td><c:out value="${user.role}"/></td>
             <td>
-                <div class="btn-group" role="group" aria-label="Basic example">
+                <div class="btn-group" role="group">
                     <form method="post" action=users/edit>
                         <input type="hidden" name="id" value="${user.id}">
-                        <div class="btn-edit">
-                            <button type="submit" class="btn btn-light">Edit</button>
-                        </div>
+                        <button type="submit" class="btn btn-light">Edit</button>
                     </form>
                     <form method="post" action=users/delete>
                         <input type="hidden" name="id" value="${user.id}">
-                        <button type="submit" class="btn btn-light">Delete</button>
+                        <div class="btn-delete">
+                            <button type="submit" class="btn btn-light">Delete</button>
+                        </div>
                     </form>
                 </div>
-
             </td>
             </c:forEach>
         </tr>

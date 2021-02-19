@@ -25,8 +25,7 @@ public class UserService {
     }
 
     public boolean delete(Long id) {
-        crudUserRepository.delete(id);
-        return crudUserRepository.findById(id) == null;
+        return crudUserRepository.delete(id);
     }
 
     public User findById(Long id) {

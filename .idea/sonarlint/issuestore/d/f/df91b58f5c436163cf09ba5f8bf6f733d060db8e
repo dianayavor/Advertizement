@@ -1,9 +1,20 @@
 
-R
-java:S2696"6Make the enclosing method "static" or remove this set.(§‘ô/8– î‰û.
-z
-java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(ž¥¦¿ùÿÿÿÿ8Î¤×ˆû.
-L
-java:S1068"*Remove this unused "logger" private field.(‚­Åçûÿÿÿÿ8¿ðÁÿú.
-X
-java:S26964"6Make the enclosing method "static" or remove this set.(¹Ã°µÿÿÿÿÿ8– î‰û.
+€
+java:S1989"eHandle the following exceptions that could be thrown by "showAdverts": ServletException, IOException.(”¹Ïú8…—°«û.
+P
+java:S2696"6Make the enclosing method "static" or remove this set.(§‘ô/8– î‰û.
+A	java:S131""Add a default case to this switch.(ë´åÝþÿÿÿÿ8ŽïÍ«û.
+‡
+java:S1130"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(©ýˆ 8Ÿ¬¯«û.
+k
+java:S1301"KReplace this "switch" statement by "if" statements to increase readability.(ë´åÝþÿÿÿÿ8ŽïÍ«û.
+’
+java:S1130"wRemove the declaration of thrown exception 'javax.servlet.ServletException', as it cannot be thrown from method's body.(©ýˆ 8Ÿ¬¯«û.
+J
+java:S1068"*Remove this unused "logger" private field.(‚­Åçûÿÿÿÿ8¿ðÁÿú.
+x
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(ááúñýÿÿÿÿ8öÓ‰ªû.
+V
+java:S2696"6Make the enclosing method "static" or remove this set.(¹Ã°µÿÿÿÿÿ8ŽïÍ«û.
+€
+java:S1989"eHandle the following exceptions that could be thrown by "showAdverts": ServletException, IOException.(”¹Ïú8úÒ°«û.

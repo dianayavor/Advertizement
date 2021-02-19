@@ -61,16 +61,16 @@ public class UserRepository implements UserRepositoryImpl, CrudRepository<User> 
                 .append(TABLE_FIELD_EMAIL).append("=?, ")
                 .append(TABLE_FIELD_ROLE).append("=?, ")
                 .append(TABLE_FIELD_IS_ACTIVE_ACCOUNT).append("=?, ")
-                .append(TABLE_FIELD_PASSWORD).append("=?, ")
-                .append("where id=?");
+                .append(TABLE_FIELD_PASSWORD).append("=? ")
+                .append(" where id=?");
         try (PreparedStatement ps = getConnection().prepareStatement(query.toString())) {
             ps.setString(1, user.getFirstName());
             ps.setString(2, user.getLastName());
             ps.setString(3, user.getEmail());
             ps.setString(4, user.getRole().toString());
             ps.setBoolean(5, user.isActiveAccount());
-            ps.setString(5, user.getPassword());
-            ps.setLong(6, user.getId());
+            ps.setString(6, user.getPassword());
+            ps.setLong(7, user.getId());
             ps.executeUpdate();
         } catch (Exception e) {
             logger.error(e.getMessage());

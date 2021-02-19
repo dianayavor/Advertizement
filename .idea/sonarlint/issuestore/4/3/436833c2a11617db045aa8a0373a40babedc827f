@@ -1,15 +1,18 @@
 
-G
-java:S1068"*Remove this unused "logger" private field.(ëÄò¿8€¾ˆ£û.
-w
-java:S1989,"ZHandle the following exception that could be thrown by "parseLong": NumberFormatException.(ÄË†è8€¾ˆ£û.
 T
-java:S1135L"2Complete the task associated to this TODO comment.(©…€¸ûÿÿÿÿ8…½’£û.
-z
-java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(•Ô¿£ùÿÿÿÿ8€¾ˆ£û.
-R
-java:S2696"6Make the enclosing method "static" or remove this set.(§‘ô/8€¾ˆ£û.
+java:S1135O"2Complete the task associated to this TODO comment.(©…€¸ûÿÿÿÿ8ëÔ±û.
+‰
+java:S1130b"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(’ÖŞú8ëÔ±û.
+]	java:S125e"<This block of commented-out lines of code should be removed.(ÔŒ®ßøÿÿÿÿ8ëÔ±û.
 b
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ëÄò¿8€¾ˆ£û.
-Z
-java:S1144="8Remove this unused private "formatParamsGetUser" method.(í Üƒÿÿÿÿÿ8…½’£û.
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ëÄò¿8ëÔ±û.
+s
+java:S19891"QHandle the following exception that could be thrown by "updateUser": IOException.(ç“åøÿÿÿÿ8ëÔ±û.
+w
+java:S1989*"ZHandle the following exception that could be thrown by "parseLong": NumberFormatException.(ÄË†è8ëÔ±û.
+R
+java:S2696"6Make the enclosing method "static" or remove this set.(§‘ô/8ëÔ±û.
+G
+java:S1068"*Remove this unused "logger" private field.(ëÄò¿8ëÔ±û.
+H
+java:S1172b"+Remove this unused method parameter "resp".(’ÖŞú8ëÔ±û.

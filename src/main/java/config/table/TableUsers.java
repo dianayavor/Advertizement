@@ -1,6 +1,6 @@
 package config.table;
 
-import static config.table.Util.executeUpdate;
+import static config.table.TableUtil.executeUpdate;
 
 public class TableUsers {
     public static final String TABLE_NAME_USERS = "users";

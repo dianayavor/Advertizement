@@ -1,3 +1,7 @@
 
-o
-java:S1192"ODefine a constant instead of duplicating this literal "select * from " 4 times.(Èıûÿÿÿÿ8¿àíàú.
+X
+java:S1141Õ"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8‡©â°û.
+q
+java:S1192c"ODefine a constant instead of duplicating this literal "select * from " 5 times.(Èıûÿÿÿÿ8‡©â°û.
+f
+java:S1192—"HDefine a constant instead of duplicating this literal " where " 3 times.(ä”âº8‡©â°û.

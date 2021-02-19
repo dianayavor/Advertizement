@@ -10,6 +10,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
+import static config.table.TableAdverts.createTableAdverts;
+import static config.table.TableUsers.createTableUsers;
 import static servlet.ServletUtil.servletContext;
 
 public class ConfigConnection {
@@ -25,6 +27,9 @@ public class ConfigConnection {
             String username = properties.getProperty("username");
             String password = properties.getProperty("password");
             connection = DriverManager.getConnection(localhost, username, password);
+            createTableUsers();
+            createTableAdverts();
+
         } catch (IOException | SQLException e) {
             logger.error(e.getMessage());
         }

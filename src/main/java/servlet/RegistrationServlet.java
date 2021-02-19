@@ -34,7 +34,7 @@ public class RegistrationServlet extends HttpServlet {
             String hashedPassword = hashPassword(password);
             User user = new User(req.getParameter("firstname"), req.getParameter("lastname"), req.getParameter("email"), LocalDate.now(), true, Role.USER, hashedPassword);
             userService.save(user);
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/login");
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/adverts");
             dispatcher(req, resp, dispatcher);
         } else {
             resp.getWriter().write("error: Passwords are different!");

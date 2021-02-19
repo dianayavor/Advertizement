@@ -6,12 +6,10 @@ model/Heading.java
  model.Heading
 repository/CrudRepository.java
  repository.CrudRepository
-config/table/Util.java
- config.table.Util
-servlet/filter/LoginFilter.java
- servlet.filter.LoginFilter
 servlet/UserServlet.java
  servlet.UserServlet
+service/ValidatorService.java
+ service.ValidatorService
 servlet/LoginServlet.java
  servlet.LoginServlet
 servlet/AdvertServlet.java
@@ -20,25 +18,29 @@ config/table/TableAdverts.java
  config.table.TableAdverts
 config/table/TableUsers.java
  config.table.TableUsers
+config/table/TableUtil.java
+ config.table.TableUtil
 model/Advert.java
  model.Advert
 model/User.java
  model.User
+repository/UserRepository.java
+ repository.UserRepository
 service/AdvertService.java
  service.AdvertService
-service/UserService.java
- service.UserService
+config/ConfigConnection.java
+ config.ConfigConnection
 servlet/RegistrationServlet.java
  servlet.RegistrationServlet
 servlet/ServletUtil.java
  servlet.ServletUtil
 repository/UserRepositoryImpl.java
  repository.UserRepositoryImpl
-service/ValidatorService.java
- service.ValidatorService
-config/ConfigConnection.java
- config.ConfigConnection
+main/Main.java
+ main.Main
+service/UserService.java
+ service.UserService
 repository/AdvertRepository.java
  repository.AdvertRepository
-repository/UserRepository.java
- repository.UserRepository
+servlet/filter/LoginFilter.java
+ servlet.filter.LoginFilter

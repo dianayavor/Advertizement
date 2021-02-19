@@ -1,15 +1,13 @@
 
-r
-java:S19891"PHandle the following exception that could be thrown by "getWriter": IOException.(‡í¥¶ÿÿÿÿÿ8ƒ¢§ÿú.
-X
-java:S26967"6Make the enclosing method "static" or remove this set.(¹Ã°µÿÿÿÿÿ8ïÍ«‰û.
-R
-java:S2696"6Make the enclosing method "static" or remove this set.(§‘ô/8ïÍ«‰û.
-K
-java:S1481+")Remove this unused "user" local variable.(®˜×ôÿÿÿÿÿ8ş‰Ä‰û.
-Z
-java:S1854+"8Remove this useless assignment to local variable "user".(®˜×ôÿÿÿÿÿ8ş‰Ä‰û.
-z
-java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(•Ô¿£ùÿÿÿÿ8îüÛˆû.
-T
-java:S1135,"2Complete the task associated to this TODO comment.(İ’ÉÄúÿÿÿÿ8ìºŞ‰û.
+x
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(•Ô¿£ùÿÿÿÿ8îüÛˆû.
+P
+java:S2696"6Make the enclosing method "static" or remove this set.(§‘ô/8ïÍ«‰û.
+V
+java:S2696"6Make the enclosing method "static" or remove this set.(¹Ã°µÿÿÿÿÿ8ïÍ«‰û.
+J
+java:S1068"*Remove this unused "logger" private field.(ÉÒóøÿÿÿÿ8å‰—¨û.
+O
+java:S1068"/Remove this unused "userService" private field.(•Ô¿£ùÿÿÿÿ8øÌ›¨û.
+œ
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(üª¼í8ı¸Ë­û.

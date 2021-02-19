@@ -1,11 +1,3 @@
 
-V
-java:S1117Ÿ"9Rename "query" which hides the field declared at line 20.(íùõw8±ıĞˆû.
-W
-java:S1117¤"9Rename "query" which hides the field declared at line 20.( ÅÈä8±ıĞˆû.
-W
-java:S1117"9Rename "query" which hides the field declared at line 20.(ä¬š8±ıĞˆû.
 i
-java:S1192="LDefine a constant instead of duplicating this literal " where id=?" 3 times.(“…ø¼8±ıĞˆû.
-\
-java:S1117´"9Rename "query" which hides the field declared at line 20.(‡ù©ÿÿÿÿÿ8±ıĞˆû.
+java:S1192="LDefine a constant instead of duplicating this literal " where id=?" 3 times.(“…ø¼8ìâ°û.
