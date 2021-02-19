@@ -12,35 +12,35 @@ service/ValidatorService.java
  service.ValidatorService
 servlet/LoginServlet.java
  servlet.LoginServlet
-servlet/AdvertServlet.java
- servlet.AdvertServlet
+servlet/filter/LoginFilter.java
+ servlet.filter.LoginFilter
 config/table/TableAdverts.java
  config.table.TableAdverts
 config/table/TableUsers.java
  config.table.TableUsers
 config/table/TableUtil.java
  config.table.TableUtil
-model/Advert.java
- model.Advert
+servlet/ServletUtil.java
+ servlet.ServletUtil
 model/User.java
  model.User
-repository/UserRepository.java
- repository.UserRepository
-service/AdvertService.java
- service.AdvertService
+repository/UserRepositoryImpl.java
+ repository.UserRepositoryImpl
+service/UserService.java
+ service.UserService
 config/ConfigConnection.java
  config.ConfigConnection
 servlet/RegistrationServlet.java
  servlet.RegistrationServlet
-servlet/ServletUtil.java
- servlet.ServletUtil
-repository/UserRepositoryImpl.java
- repository.UserRepositoryImpl
+model/Advert.java
+ model.Advert
 main/Main.java
  main.Main
-service/UserService.java
- service.UserService
+service/AdvertService.java
+ service.AdvertService
 repository/AdvertRepository.java
  repository.AdvertRepository
-servlet/filter/LoginFilter.java
- servlet.filter.LoginFilter
+repository/UserRepository.java
+ repository.UserRepository
+servlet/AdvertServlet.java
+ servlet.AdvertServlet

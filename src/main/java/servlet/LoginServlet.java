@@ -19,6 +19,7 @@ public class LoginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private final Logger logger = LogManager.getLogger(LoginServlet.class);
     private UserService userService = new UserService();
+    private final String subject = "token";
 
     @Override
     public void init() throws ServletException {
@@ -33,6 +34,13 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String username = req.getAttribute("username").toString();
+        String password = req.getAttribute("password").toString();
+        String hashedPassword = hashPassword(password);
+        if (username.contains("@") || password.length() > 15 || password.length() < 5 || !checkPassword(password, hashedPassword)) {
+            String token = createToken(subject);
+            req.setAttribute("token", token);
+        }
     }
 
     @Override

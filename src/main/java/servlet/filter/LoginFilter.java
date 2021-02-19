@@ -4,9 +4,6 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
 
-import static servlet.ServletUtil.checkPassword;
-import static servlet.ServletUtil.hashPassword;
-
 @WebFilter(urlPatterns = "/login")
 public class LoginFilter implements Filter {
 
@@ -16,7 +13,7 @@ public class LoginFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        String username = "";
+       /* String username = "";
         String password = "";
 
         if (request.getAttribute("username").toString() != null) {
@@ -32,7 +29,7 @@ public class LoginFilter implements Filter {
 
         if (!username.contains("@") || password.length() > 15 || password.length() < 6 || !checkPassword(password, hashedPassword)) {
             request.setAttribute("error", "Wrong email or password");
-        }
+        }*/
         chain.doFilter(request, response);
     }
 

@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Map;
 
 import static servlet.ServletUtil.*;
@@ -35,7 +34,7 @@ public class UserServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
         Map<String, String[]> params = req.getParameterMap();
         long id = -1L;
         if (params.containsKey("id")) {
@@ -43,23 +42,26 @@ public class UserServlet extends HttpServlet {
         }
 
         String action = req.getServletPath();
-
-        switch (action) {
-            case "/users/edit":
-                updateUser(id, req, resp);
-                break;
-            case "/users/delete":
-                deleteUser(id, resp, req);
-                break;
-            case "/registration":
-                saveUser(req, resp);
-                break;
-            case "/users/edited":
-                updatedUser(req, resp);
-                break;
-            default:
-                showUsers(req, resp);
-                break;
+        try {
+            switch (action) {
+                case "/users/edit":
+                    updateUser(id, req, resp);
+                    break;
+                case "/users/delete":
+                    deleteUser(id, resp, req);
+                    break;
+                case "/registration":
+                    saveUser(req, resp);
+                    break;
+                case "/users/edited":
+                    updatedUser(req, resp);
+                    break;
+                default:
+                    showUsers(req, resp);
+                    break;
+            }
+        } catch (IOException e) {
+            logger.error(e.getMessage());
         }
     }
 
@@ -92,41 +94,31 @@ public class UserServlet extends HttpServlet {
         return user;
     }
 
-    private boolean showUsers(HttpServletRequest req, HttpServletResponse resp) {
-        List<User> users = userService.findAll();
-        req.setAttribute("users", users);
+    private void showUsers(HttpServletRequest req, HttpServletResponse resp) {
+        req.setAttribute("users", userService.findAll());
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/user_list.jsp");
         dispatcher(req, resp, dispatcher);
-        return true;
     }
 
-    private boolean updateUser(long id, HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        User user = userService.findById(id);
-        req.setAttribute("user", user);
+    private void updateUser(long id, HttpServletRequest req, HttpServletResponse resp) {
+        req.setAttribute("user", userService.findById(id));
         RequestDispatcher dispatcher = req.getRequestDispatcher("/user_edit.jsp");
         dispatcher(req, resp, dispatcher);
-        return true;
     }
 
-    private boolean deleteUser(long id, HttpServletResponse resp, HttpServletRequest req) throws IOException {
+    private void deleteUser(long id, HttpServletResponse resp, HttpServletRequest req) throws IOException {
         userService.delete(id);
-        List<User> users = userService.findAll();
-        req.setAttribute("users", users);
+        req.setAttribute("users", userService.findAll());
         resp.sendRedirect("/webappadw/users");
-        return true;
     }
 
-    private boolean updatedUser(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        User user = formatParamsGetUser(req);
-        userService.update(user);
+    private void updatedUser(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        userService.update(formatParamsGetUser(req));
         resp.sendRedirect("/webappadw/users");
-        return true;
     }
 
-    private boolean saveUser(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        User user = formatParamsGetUser(req);
-        userService.save(user);
+    private void saveUser(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        userService.save(formatParamsGetUser(req));
         resp.sendRedirect("/users");
-        return true;
     }
 }

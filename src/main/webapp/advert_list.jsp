@@ -52,8 +52,14 @@
         .container-header {
             margin-left: 100px;
         }
+
         .link-my-profile {
-            align-items: end;
+            align-self: end;
+        }
+
+        .btn-group {
+            align-self: end;
+            width: 200px;
         }
     </style>
     <div class="navbar navbar-dark bg-dark">
@@ -61,13 +67,18 @@
             <a href="users" class="navbar-brand">Users</a>
             <a href="my-adverts" class="navbar-brand">My adverts</a>
             <a href="adverts" class="navbar-brand">Adverts</a>
-            <a href="" class="navbar-brand">${requestScope.user.firstName} ${requestScope.user.lastName}</a>
+            <span class="link-my-profile">
+                <a href="" class="navbar-brand">${requestScope.user.firstName} ${requestScope.user.lastName}</a>
+            </span>
         </div>
     </div>
 </head>
 <body>
 
 <div class="advert-list" align="center">
+    <form method="get" action="add_user.jsp">
+        <button type="submit" name="button-add-advert">Add</button>
+    </form>
     <div class="card text-dark bg-light mb-3">
         <c:forEach items="${requestScope.adverts}" var="advert">
             <div class="card">
@@ -75,6 +86,17 @@
                 <div class="card-body">
                     <h5 class="card-title" align="right">${advert.heading}</h5>
                     <p class="card-text" align="justify">${advert.description}</p>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-success">active</button>
+                    <form action="adverts/edit" method="post">
+                        <input type="hidden" name="advertId" value="${advert.id}">
+                        <button type="submit" class="btn btn-light">Edit</button>
+                    </form>
+                    <form action="adverts/delete" method="post">
+                        <input type="hidden" name="advertId" value="${advert.id}">
+                        <button type="submit" class="btn btn-light">Delete</button>
+                    </form>
                 </div>
             </div>
         </c:forEach>

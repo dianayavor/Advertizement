@@ -57,7 +57,7 @@ public class AdvertRepository implements CrudRepository<Advert>, AdvertRepositor
                 .append(TABLE_FIELD_TITLE).append("=?, ")
                 .append(TABLE_FIELD_DESCRIPTION).append("=?, ")
                 .append(TABLE_FIELD_HEADING).append("=?, ")
-                .append(TABLE_FIELD_IS_ACTIVE).append("=?, ")
+                .append(TABLE_FIELD_IS_ACTIVE).append("=? ")
                 .append(" where id=?");
         try (PreparedStatement ps = getConnection().prepareStatement(query.toString())) {
             ps.setString(1, advert.getTitle());
